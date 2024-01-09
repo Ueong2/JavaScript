@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function add(x, y) {
+            alert(arguments.length); // 6개의 인자가 모두 넘어감을 확인할 수 있음
+            alert(arguments[5]);
+            return x+y;
+        };
+
+        // 인자에 대한 개수의 정의가 분명하지 않음
+        // 자바스크립트에서는 앞의 두 인자가 함수에서 동작함
+        document.write(add(5,4,5,1,2,"hello"));
+
+    </script>
+</body>
+</html>
