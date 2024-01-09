@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var x = 3;
+        var y = 3;
+
+        document.write(x == y);     // x와 y의 값을 비교
+        document.write("<br>");
+        document.write(x === y);    // x와 y의 주소를 비교
+        document.write("<br>");
+        // x, y처럼 값이 똑같은 경우 y는 x를 참조만 한다.
+        // y에 같은 값의 새로운 객체를 선언하고싶다면 아래와 같이 해야한다.
+        var z = new Number(3);
+        document.write(x == z);
+        document.write("<br>");
+        document.write(x === z);    // x와 z의 주소를 비교하므로 false 출력됨
+        document.write("<br>");
+        document.write(3.5-"1");
+        document.write("<br>");
+        document.write(5<3+4);
+        
+
+    </script>
+</body>
+</html>
