@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var data = {"n id":2, id:1, title:"aaa"}
+        
+        console.log(data.title);
+        console.log(data["n id"]);
+
+        // parser 사용 시 키 값은 무조건 문자열로 사용해야 함 
+        var data2 = JSON.parse('{"id":1, "title":"kkk"}');
+        console.log(data2.title);
+
+        var data3 = {id:2, title:"bbb"};
+
+        var json = JSON.stringify(data2);
+        alert(json);
+
+    </script>
+</body>
+</html>
