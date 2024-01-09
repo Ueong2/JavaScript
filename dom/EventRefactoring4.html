@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="클릭" id="btn-print" /><br /> <!-- 이 줄이 실행돼야 id의 btnPrint 객체가 생성된다. -->
+    <span id="span1" onclick="alert('hello');">스팬입니다.</span>
+    <!-- 두 개의 js파일에 각각 window.onload = function() 로 설정하면 마지막의 window.onload만 동작하여 덮어씌워진다 -->
+    <script src="EventRefactoring4.js"></script>
+    <script src="test4.js"></script> 
+
+</body>
+</html>
