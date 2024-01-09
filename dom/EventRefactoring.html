@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="클릭" id="btnPrint" /><br /> <!-- 이 줄이 실행돼야 id의 btnPrint 객체가 생성된다. -->
+    <span id="span1" onclick="alert('hello');">스팬입니다.</span>
+    <script>
+        function printResult() {
+            var x = prompt("x의 값을 입력하세요", 0);
+            var y = prompt("y의 값을 입력하세요", 0);
+    
+            x = parseInt(x);
+            y = parseInt(y);
+            
+            btnPrint.value = x+y;   // id를 부여한 input 태그의 값이 바뀐다.
+        }
+        btnPrint.onclick = printResult;     // 이 코드는 printResult() 함수 밖에 있는 코드이므로 html 실행 시 실행되며 따라서 btnPrint가 defined 돼있지 않아 오류가 발생한다.
+                                            // 이러한 문제의 해결을 위해 script를 input보다 밑으로 보내야한다.
+                                            // onclick을 script 안으로 집어넣어 코드를 좀 더 간결하게 만들 수 있다.
+    </script> 
+</body>
+</html>
