@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var ar = ["hello", "hi", "greeting"];
+
+        for(var i=0; i<ar.length; i++) 
+            document.write(ar[i] + "<br />");
+
+        for(var i in ar)    // for in 문은 ar의 index를 순차대로 i에 선언한다.
+            document.write("ar[" + i + "] : " + ar[i] + "<br />");
+
+        var ob = {id:1, title:"hello", writeId:"kiko"};
+
+        for(var i in ob)    // i에 키값을 선언한다.
+            document.write("ob[" + i + "] : " + ob[i] + "<br />");
+    </script>
+</body>
+</html>
