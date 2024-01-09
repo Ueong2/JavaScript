@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="클릭" id="btn-print" /><br /> <!-- 이 줄이 실행돼야 id의 btnPrint 객체가 생성된다. -->
+    <span id="span1" onclick="alert('hello');">스팬입니다.</span>
+    <script>
+        window.onload = function() {
+            var btnPrint = document.getElementById("btn-print"); // 이 코드 덕분에 input 태그에서 html의 표기방식을 준수할 수 있다.
+
+            btnPrint.onclick = function() {
+                var x = prompt("x의 값을 입력하세요", 0);
+                var y = prompt("y의 값을 입력하세요", 0);
+        
+                x = parseInt(x);
+                y = parseInt(y);
+                
+                btnPrint.value = x+y;   // id를 부여한 input 태그의 값이 바뀐다.
+            };
+        }
+    </script> 
+</body>
+</html>
