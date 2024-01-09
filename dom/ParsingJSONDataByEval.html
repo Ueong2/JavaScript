@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var data =  '[ \
+                        {"co":0.44,"so2":0.003,"o3":0.0031,"no2":0.0405,"pm10":23,"msrdt_de":"20240109","pm25":16,"msrste_nm":"강남구"}, \
+                        {"co":0.4,"so2":0.0038,"o3":0.006,"no2":0.0355,"pm10":26,"msrdt_de":"20240109","pm25":17,"msrste_nm":"강남대로"}, \
+                        {"co":0.52,"so2":0.0031,"o3":0.0025,"no2":0.0435,"pm10":25,"msrdt_de":"20240109","pm25":14,"msrste_nm":"강동구"} \
+                    ]';
+        console.log(data[0].co);
+
+        eval('var x = 20;'); // eval을 통해 넘겨받은 문자열 데이터를 파싱할 수 있다.
+        console.log(x);
+    
+        eval("var ar = " + data + ";"); // data를 파싱한 후 var ar을 선언
+        console.log(ar[0].co);
+        console.log(ar[0].co);
+        
+    </script>
+</body>
+</html>
