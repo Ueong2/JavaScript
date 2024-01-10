@@ -78,7 +78,7 @@ window.addEventListener("load", function(){
     var section = document.querySelector("#section5");
 
     var srcInput = section.querySelector(".src-input");
-    var imgSelect = section.querySelector(".img-select");
+    var imgSelect = section.querySelector(".img-select");   // img-select 사용 시 활성화
     var changeButton = section.querySelector(".change-button");
     var img = section.querySelector(".img");
     var colorInput = section.querySelector(".color-input");
@@ -92,5 +92,59 @@ window.addEventListener("load", function(){
         img.style.borderColor = colorInput.value;   // border-color를 borderColor로 대체함
         console.log(img.className);
 
+    };
+});
+
+
+// Ex6 : 노드 조작 - 메뉴추가(createTextNode, Element)
+window.addEventListener("load", function(){
+    var section = document.querySelector("#section6");
+
+    var titleInput = section.querySelector(".title-input");
+    var menuListUl = section.querySelector(".menu-list");
+    var addButton = section.querySelector(".add-button");
+    var delButton = section.querySelector(".del-button");
+
+    addButton.onclick = function(){
+        // Method 3
+        var title = titleInput.value;
+
+        var html = '<a href="">' + title + '</a>';
+        var li = document.createElement("li");  // Method 1 과 달리 li를 직접 생성한다.
+        li.innerHTML = html;    // 기존에 만들어져있는 li 태그에 하나의 li 태그를 추가한 후
+
+        // menuListUl.appendChild(li); // innerHTML로 li 태그 안에 a 태그를 추가하므로 성능이 개선된다.
+
+        menuListUl.append(li); // appendChild는 text를 추가할 수 없었지만 append는 가능하다.
+
+        // Method 1
+
+        // var title = titleInput.value;
+        // menuListUl.innerHTML += '<li><a href="">' + title + '</a></li>'; 
+
+        // 아래의 코드와 기능은 동일하며 훨씬 심플하지만 위의 코드는 한 줄이 추가되는 것이 아니라 
+        // 만들어진 li 태그를 없앤 후 다시 생성하는 것이므로 성능의 문제를 야기할 수 있다.
+
+        // Method 2
+
+        // var title = titleInput.value;
+        // var txtNode = document.createTextNode(title);
+
+        // var aNode = document.createElement("a");     // a 태그 생성
+        // aNode.href="";
+        // aNode.appendChild(txtNode);
+
+        // var liNode = document.createElement("li");   // li 태그 생성
+        // liNode.appendChild(aNode);
+
+        // menuListUl.appendChild(liNode);
+    };
+
+    delButton.onclick = function(){
+        // var txtNode = menuListUl.childNodes[0];
+        var liNode = menuListUl.children[0];
+
+        // menuListUl.removeChild(liNode);
+        liNode.remove();    // 위의 코드와 같은 기능
     };
 });
