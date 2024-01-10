@@ -81,9 +81,16 @@ window.addEventListener("load", function(){
     var imgSelect = section.querySelector(".img-select");
     var changeButton = section.querySelector(".change-button");
     var img = section.querySelector(".img");
+    var colorInput = section.querySelector(".color-input");
 
     changeButton.onclick = function(){
-        img.src = "images/" + srcInput.value;
-        // img.src = "images/" + imgSelect.value;
+        img.src = "images/" + srcInput.value;   // datalist를 위한 경로
+        // img.src = "images/" + imgSelect.value;  // select를 위한 경로
+
+        // img.style.border-color = ?;
+        // img.style["border-color"] = colorInput.value;
+        img.style.borderColor = colorInput.value;   // border-color를 borderColor로 대체함
+        console.log(img.className);
+
     };
 });
