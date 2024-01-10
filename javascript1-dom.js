@@ -37,3 +37,22 @@ window.addEventListener("load", function(){
         txtSum.value = x+y;
     };
 });
+
+
+// Ex3 : Selectors API Level1
+window.addEventListener("load", function(){
+    var section3 = document.getElementById("section3");
+    // .은 태그의 class #은 태그의 id
+    // var txtX = section3.querySelector(".txt-x");
+    var txtX = section3.querySelector("input[name='x']"); // class 대신 name 인 경우
+    var txtY = section3.querySelector(".txt-y");
+    var btnAdd = section3.querySelector(".btn-add");
+    var txtSum = section3.querySelector(".btn-sum");
+
+    btnAdd.onclick = function() {
+        var x = parseInt(txtX.value);
+        var y = parseInt(txtY.value);
+
+        txtSum.value = x+y;
+    };
+});
